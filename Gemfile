@@ -1,3 +1,6 @@
+source :rubygems
+
+gem 'activesupport', '~> 3.0.0'
 gem 'rake', '~> 0.8.7'
 
 group :test do
