@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Untitled::PathParser do
-  let(:parser) { Untitled::PathParser }
+describe StrawberryCough::PathParser do
+  let(:parser) { StrawberryCough::PathParser }
 
   it "extracts parameters from simple resource path" do
     simple_resource_path = "/parent/:id/edit(.:format)"

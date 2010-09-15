@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Untitled::PathCompiler do
+describe StrawberryCough::PathCompiler do
 end

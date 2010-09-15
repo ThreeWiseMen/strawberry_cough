@@ -3,4 +3,4 @@ $:.unshift lib_dir unless $:.include?(lib_dir)
 
 require 'rspec'
 
-require 'untitled'
+require 'strawberry_cough'

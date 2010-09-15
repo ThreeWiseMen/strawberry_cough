@@ -1,4 +1,4 @@
-module Untitled
+module StrawberryCough
   class PathParser
     PARAM_PATTERN = /:([\w_\d]+)/
 
