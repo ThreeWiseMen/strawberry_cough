@@ -1,4 +1,4 @@
 module Untitled
-  class RouteCompiler
+  class PathCompiler
   end
 end
