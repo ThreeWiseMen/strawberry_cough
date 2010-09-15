@@ -5,12 +5,7 @@ module StrawberryCough
       def compile(path)
         params  = PathParser.parse_params(path)
         anchors = PathParser.parse_anchors(path)
-        js = <<-JS
-          function(#{args_list(params)}) {
-            var url = #{url_concatenation(anchors, params)};
-            return ( format !== undefined ) ? url + "." + format : url;
-          };
-        JS
+        %Q{function(#{args_list(params)}) {var url = #{url_concatenation(anchors, params)};return ( format !== undefined ) ? url + "." + format : url;};}
       end
 
       private
