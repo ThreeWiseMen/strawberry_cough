@@ -6,10 +6,10 @@ describe StrawberryCough::PathCompiler do
 
   it "compiles a simple resource path into a JavaScript function" do
     js = <<-JS
-        function(id, format) {
-          var url = "/parent/" + id + "/edit";
-          return ( format !== undefined ) ? url + "." + format : url;
-        };
+          function(id, format) {
+            var url = "/parent/" + id + "/edit";
+            return ( format !== undefined ) ? url + "." + format : url;
+          };
     JS
     compiler.compile(simple_resource_path).should == js
   end
