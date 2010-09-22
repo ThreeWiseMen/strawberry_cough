@@ -4,11 +4,11 @@ module StrawberryCough
   class RoutesCompiler
 
     def self.compile(route_set)
-      functions = route_set.collect do |route|
+      functions = route_set.inject([]) do |memo, route|
         path_func_name = route.name.camelize(:lower) + "Path"
-        "this.#{path_func_name} = " + PathCompiler.compile(route.path)
+        memo << "this.#{path_func_name} = " + PathCompiler.compile(route.path)
       end
-      "var StrawberryCough = {#{functions.join}};"
+      "var StrawberryCough = {#{functions.uniq.join}};"
     end
 
     def self.compile_to_io(route_set, io)

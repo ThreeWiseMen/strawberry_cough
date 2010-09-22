@@ -1,4 +1,5 @@
 require 'strawberry_cough/routes_compiler'
+require 'rails/railtie'
 
 module StrawberryCough
   class Railtie < Rails::Railtie
