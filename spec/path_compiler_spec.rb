@@ -13,4 +13,10 @@ describe StrawberryCough::PathCompiler do
     js = %Q{function(format) {var url = "/";return addFormat(url, format);}}
     compiler.compile("/(.:format)").should == js
   end
+
+  it "does not double up slashes in returned URL" do
+    js = %Q{function(format) {var url = "/parent/new";return addFormat(url, format);}}
+    compiler.compile("/parent/new(.:format)").should == js
+  end
+
 end

@@ -10,10 +10,11 @@ module StrawberryCough
     private
       def self.url_concatenation(anchors, params)
         params_without_format = params.reject { |p| p == "format" }
-        surrounded_anchors = anchors.map { |a| %Q{"/#{a}/"} }
-        pairs = surrounded_anchors.zip(params_without_format).flatten.compact
-        url = pairs.join(" + ").gsub(/(.)\/"$/, '\1"')
-        url == "" ? '"/"' : url
+        surrounded_anchors = anchors.map { |a| %Q{"#{a}"} }
+        surrounded_anchors.zip(params_without_format).
+                          flatten.
+                          compact.
+                          join(" + ")
       end
 
       def self.args_list(params)

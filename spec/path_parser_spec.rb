@@ -17,11 +17,19 @@ describe StrawberryCough::PathParser do
 
   describe ".parse_anchors" do
     it "parses anchors from a simple resource path" do
-      parser.parse_anchors(simple_resource_path).should == %w{parent edit}
+      parser.parse_anchors(simple_resource_path).should == %w{/parent/ /edit}
     end
 
     it "parses anchors from a nested resource path" do
-      parser.parse_anchors(nested_resource_path).should == %w{parent child edit}
+      parser.parse_anchors(nested_resource_path).should == %w{/parent/ /child/ /edit}
+    end
+
+    it "combines anchors not followed by a parameter" do
+      parser.parse_anchors("/parent/new").should == %w{/parent/new}
+    end
+
+    it 'should parse root anchor' do
+      parser.parse_anchors("/").should == %w{/}
     end
   end
 end
