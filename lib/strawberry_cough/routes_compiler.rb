@@ -11,5 +11,8 @@ module StrawberryCough
       "var StrawberryCough = {#{functions.join}};"
     end
 
+    def self.compile_to_io(route_set, io)
+      io << compile(route_set)
+    end
   end
 end
