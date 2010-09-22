@@ -1,5 +1,7 @@
 source :rubygems
 
+gemspec
+
 gem 'rake', '~> 0.8.7'
 
 gem 'activesupport', '~> 3.0.0'
