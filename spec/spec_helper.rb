@@ -6,3 +6,4 @@ require 'rspec'
 require 'strawberry_cough'
 
 alias :context :describe
+
