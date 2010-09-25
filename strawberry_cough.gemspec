@@ -5,11 +5,10 @@ Gem::Specification.new do |s|
   s.name        = "strawberry_cough"
   s.version     = StrawberryCough::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = []
-  s.email       = []
+  s.authors     = ["Craig Savolainen", "Nate Smith"]
+  s.email       = ["support@threewisemen.ca"]
   s.homepage    = "http://rubygems.org/gems/strawberry_cough"
-  s.summary     = ""
-  s.description = ""
+  s.summary     = "Strawberry Cough lets you access your Rails 3 routes in your JavaScripts."
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "strawberry_cough"
