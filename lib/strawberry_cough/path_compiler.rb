@@ -1,4 +1,5 @@
 module StrawberryCough
+
   class PathCompiler
 
     def self.compile(path)
@@ -29,4 +30,5 @@ function (#{args_list(params)}) {
         params.join(", ")
       end
   end
+
 end
