@@ -1,7 +1,7 @@
 Strawberry Cough
 ================
 
-Strawberry Cough lets you access your Rails 3 routes from your JavaScripts.
+Strawberry Cough lets you access your Rails 3 routes in your JavaScripts.
 
 Example
 -------
