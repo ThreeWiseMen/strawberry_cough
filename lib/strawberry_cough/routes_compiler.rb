@@ -10,7 +10,7 @@ module StrawberryCough
         memo << "#{name} : " + PathCompiler.compile(route.path)
       end.to_a.join(',')
       <<-COMPILED
-var StrawberryCough = {
+var Routes = {
     #{functions}
 };
       COMPILED
