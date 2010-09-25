@@ -2,22 +2,20 @@ require 'spec_helper'
 
 describe StrawberryCough::RoutesCompiler do
   let(:compiler) { StrawberryCough::RoutesCompiler }
+  let(:interpreter) { V8::Context.new }
 
   it "makes an empty JavaScript object when given an empty route set" do
-    compiler.compile([]).should == 'var StrawberryCough = (function(){function addFormat(url, format) {return ( format !== undefined ) ? url + "." + format : url;} return {};})();'
+    routes_object = compiler.compile([])
+    interpreter.eval(routes_object)
+    interpreter.eval("StrawberryCough.rootPath === undefined").should be_true
   end
 
-  it "makes a Routes JavaScript object when given a set of routes" do
+  it "makes a Routes JavaScript object when given an array of routes" do
     route = double('route')
     route.stub(:path) { "/parent/:id/edit(.:format)" }
     route.stub(:name) { "edit_parent" }
-    compiler.compile([route]).should == %Q{var StrawberryCough = (function(){function addFormat(url, format) {return ( format !== undefined ) ? url + "." + format : url;} return {editParentPath : function(id, format) {var url = "/parent/" + id + "/edit";return addFormat(url, format);}};})();}
-  end
-
-  it "filters duplicate routes" do
-    route = double('route')
-    route.stub(:path) { "/parent/:id/edit(.:format)" }
-    route.stub(:name) { "edit_parent" }
-    compiler.compile([route, route]).should == %Q{var StrawberryCough = (function(){function addFormat(url, format) {return ( format !== undefined ) ? url + "." + format : url;} return {editParentPath : function(id, format) {var url = "/parent/" + id + "/edit";return addFormat(url, format);}};})();}
+    routes_object = compiler.compile([route])
+    interpreter.eval(routes_object)
+    interpreter.eval("typeof StrawberryCough.editParentPath === 'function'").should be_true
   end
 end

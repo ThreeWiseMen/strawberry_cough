@@ -2,14 +2,16 @@ require 'active_support/inflector'
 
 module StrawberryCough
   class RoutesCompiler
-    ADD_FORMAT_FUNCTION = 'function addFormat(url, format) {return ( format !== undefined ) ? url + "." + format : url;}'
-
     def self.compile(route_set)
       functions = route_set.inject(Set.new) do |memo, route|
-        path_func_name = route.name.camelize(:lower) + "Path"
-        memo << "#{path_func_name} : " + PathCompiler.compile(route.path)
-      end
-      "var StrawberryCough = (function(){#{ADD_FORMAT_FUNCTION} return {#{functions.to_a.join(',')}};})();"
+        name = route.name.camelize(:lower) + "Path"
+        memo << "#{name} : " + PathCompiler.compile(route.path)
+      end.to_a.join(',')
+      <<-COMPILED
+var StrawberryCough = {
+    #{functions}
+};
+      COMPILED
     end
 
     def self.compile_to_io(route_set, io)
