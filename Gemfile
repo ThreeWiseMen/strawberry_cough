@@ -12,3 +12,9 @@ group :test do
   gem 'therubyracer', '~> 0.8.1'
 end
 
+platforms :mri_18 do
+  group :quality do
+    gem 'metric_fu', '~> 2.1.1'
+  end
+end
+
