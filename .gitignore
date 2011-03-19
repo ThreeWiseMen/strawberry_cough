@@ -4,3 +4,5 @@ pkg/*
 *.gem
 tmp
 measurements
+doc
+

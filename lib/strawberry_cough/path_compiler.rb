@@ -5,7 +5,7 @@ module StrawberryCough
 
     # Compile path to JavaScript function
     #
-    # @returns [String]
+    # @return [String]
     #
     # @api private
     def self.compile(path)
@@ -26,10 +26,9 @@ function (#{args_list(params)}) {
 
     private
 
-    # Compile anchors and parameters into JavaScript statement that
-    # concatenates them into a valid URL
+    # Generate JavaScript to concatenate anchors and params into valid URL
     #
-    # @returns [String]
+    # @return [String]
     #
     # @api private
     def self.url_concatenation(anchors, params)
@@ -40,10 +39,9 @@ function (#{args_list(params)}) {
     end
 
 
-    # Compile parameter list into a function argument list for a
-    # JavaScript function
+    # Generate argument listing for JavaScript function
     #
-    # @returns [String]
+    # @return [String]
     #
     # @api private
     def self.args_list(params)

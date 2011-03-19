@@ -7,7 +7,7 @@ module StrawberryCough
 
     # Get list of parameters from a path
     #
-    # @returns [Array]
+    # @return [Array]
     #
     # @api private
     def self.parse_params(path)
@@ -16,7 +16,7 @@ module StrawberryCough
 
     # Get list of anchors from a path
     #
-    # @returns [Array]
+    # @return [Array]
     #
     # @api private
     def self.parse_anchors(path)

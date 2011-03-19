@@ -7,7 +7,7 @@ module StrawberryCough
 
     # Compile route set to a JavaScript object
     #
-    # @returns [String]
+    # @return [String]
     #
     # @api private
     def self.compile(route_set)
@@ -24,7 +24,7 @@ var Routes = {
 
     # Write set to IO object
     #
-    # @returns [IO]
+    # @return [IO]
     #
     # @api private
     def self.compile_to_io(route_set, io)
