@@ -32,8 +32,8 @@ function (#{args_list(params)}) {
     #
     # @api private
     def self.url_concatenation(anchors, params)
-      params_without_format = params.reject { |p| p == "format" }
-      quoted_anchors = anchors.map { |a| "\"#{a}\"" }
+      params_without_format = params.reject { |param| param == "format" }
+      quoted_anchors = anchors.map { |anchor| "\"#{anchor}\"" }
       anchors_paired_with_params = quoted_anchors.zip(params_without_format)
       anchors_paired_with_params.flatten.compact.join(" + ")
     end
