@@ -3,8 +3,9 @@ require 'rails/railtie'
 
 module StrawberryCough
 
+  # Railtie compiles routes on first request in production environment,
+  # and on every request in development environment
   class Railtie < Rails::Railtie
-
     config.to_prepare do
       app = Rails.application
       routes = app.routes.routes
@@ -13,7 +14,6 @@ module StrawberryCough
         RoutesCompiler.compile_to_io(routes, io)
       end
     end
-
   end
-
 end
+
