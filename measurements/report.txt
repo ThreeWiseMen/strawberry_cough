@@ -1,7 +1,0 @@
-lib/strawberry_cough/path_compiler.rb:5: StrawberryCough::PathCompiler.compile: The method summary should be specified
-lib/strawberry_cough/path_compiler.rb:5: StrawberryCough::PathCompiler.compile: The public/semipublic method should have an example specified
-lib/strawberry_cough/path_compiler.rb:5: StrawberryCough::PathCompiler.compile: The @api tag should be specified
-lib/strawberry_cough/path_compiler.rb:5: StrawberryCough::PathCompiler.compile: The @api tag must be either public, semipublic or private
-lib/strawberry_cough/path_compiler.rb:5: StrawberryCough::PathCompiler.compile: The @return tag should be specified
-
-Coverage: 50.0%  Success: 5  Failed: 5  Total: 10
