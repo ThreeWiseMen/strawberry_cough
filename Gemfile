@@ -15,6 +15,7 @@ end
 platforms :mri_18 do
   group :quality do
     gem 'metric_fu', '~> 2.1.1'
+    gem 'reek', '~> 1.2.8'
   end
 end
 

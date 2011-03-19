@@ -68,7 +68,7 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rails_best_practices (0.7.1)
+    rails_best_practices (0.7.2)
       activesupport
       colored (~> 1.2)
       erubis (~> 2.6.6)
@@ -118,6 +118,7 @@ DEPENDENCIES
   metric_fu (~> 2.1.1)
   railties (~> 3.0.5)
   rake (~> 0.8.7)
+  reek (~> 1.2.8)
   rspec (~> 2.5.0)
   strawberry_cough!
   therubyracer (~> 0.8.1)
