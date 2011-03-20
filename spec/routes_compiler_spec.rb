@@ -4,10 +4,11 @@ describe StrawberryCough::RoutesCompiler do
   let(:compiler) { StrawberryCough::RoutesCompiler }
   let(:interpreter) { V8::Context.new }
 
-  it "makes an empty JavaScript object when given an empty route set" do
-    routes_object = compiler.compile([])
-    interpreter.eval(routes_object)
-    interpreter.eval("Routes.rootPath === undefined").should be_true
+  it "generates an empty Routes object with an empty route set" do
+    empty_routes_object = compiler.compile([])
+    interpreter.eval(empty_routes_object)
+    property_check = "for (var prop in Routes) { return prop; }"
+    interpreter.eval(property_check).should be_nil
   end
 
   it "makes a Routes JavaScript object when given an array of routes" do
@@ -19,3 +20,4 @@ describe StrawberryCough::RoutesCompiler do
     interpreter.eval("typeof Routes.editParentPath === 'function'").should be_true
   end
 end
+
