@@ -2,14 +2,14 @@ source 'http://rubygems.org/'
 
 gemspec
 
-gem 'rake', '~> 0.8.7'
+gem 'rake', '~> 0.9.2'
 
-gem 'activesupport', '~> 3.0.5'
-gem 'railties',      '~> 3.0.5'
+gem 'activesupport', '~> 3.0.9'
+gem 'railties',      '~> 3.0.9'
 
 group :test do
-  gem 'rspec',        '~> 2.5.0'
-  gem 'therubyracer', '~> 0.8.1'
+  gem 'rspec',        '~> 2.6.0'
+  gem 'therubyracer', '~> 0.9.1'
 end
 
 platforms :mri_18 do
@@ -18,8 +18,8 @@ platforms :mri_18 do
     gem 'reek', '~> 1.2.8'
     gem 'flay', '~> 1.4.2'
     gem 'flog', '~> 2.5.1'
-    gem 'yard', '~> 0.6.5'
-    gem 'yardstick', '~> 0.3.0'
+    gem 'yard', '~> 0.7.2'
+    gem 'yardstick', '~> 0.4.0'
   end
 end
 
