@@ -3,14 +3,10 @@ source 'http://rubygems.org/'
 gemspec
 
 gem 'rake', '~> 0.9.2'
+gem 'rails', '~> 3.0.9'
 
-gem 'activesupport', '~> 3.0.9'
-gem 'railties',      '~> 3.0.9'
-
-group :test do
-  gem 'rspec',        '~> 2.6.0'
-  gem 'therubyracer', '~> 0.9.1'
-end
+gem 'rspec-rails', '~> 2.6.1', :group => [:development, :test]
+gem 'therubyracer', '~> 0.9.1', :group => :test
 
 platforms :mri_18 do
   group :quality do
