@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe StrawberryCough::PathParser do
-  let(:parser) { StrawberryCough::PathParser }
+describe PathParser do
+  let(:parser) { PathParser }
   let(:simple_resource_path) { "/parent/:id/edit(.:format)" }
   let(:nested_resource_path) { "/parent/:parent_id/child/:id/edit(.:format)" }
 

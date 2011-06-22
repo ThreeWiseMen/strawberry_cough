@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe StrawberryCough::PathCompiler do
-  let(:compiler) { StrawberryCough::PathCompiler }
+describe PathCompiler do
+  let(:compiler) { PathCompiler }
   let(:interpreter) { V8::Context.new }
 
   it "compiles a resource path into a JavaScript function that returns that path" do

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe StrawberryCough::RoutesCompiler do
-  let(:compiler) { StrawberryCough::RoutesCompiler }
+describe RoutesCompiler do
+  let(:compiler) { RoutesCompiler }
   let(:interpreter) { V8::Context.new }
 
   it "generates an empty Routes object with an empty route set" do
