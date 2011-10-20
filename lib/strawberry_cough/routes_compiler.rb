@@ -11,10 +11,11 @@ module StrawberryCough
     #
     # @api private
     def self.compile(route_set)
-      functions = route_set.inject(Set.new) do |memo, route|
+      functions = named_routes(route_set).inject(Set.new) do |memo, route|
         name = route.name.camelize(:lower) + "Path"
         memo << "#{name} : " + PathCompiler.compile(route.path)
       end.to_a.join(',')
+
       <<-COMPILED
 var Routes = {
     #{functions}
@@ -31,6 +32,9 @@ var Routes = {
       io << compile(route_set)
     end
 
+    def self.named_routes(routes)
+      routes.select {|x| x.name.present? }
+    end
   end
 end
 
