@@ -2,14 +2,16 @@ source 'http://rubygems.org/'
 
 gemspec
 
-gem 'rake', '~> 0.8.7'
+gem 'rake'
 
-gem 'activesupport', '~> 3.0.5'
-gem 'railties',      '~> 3.0.5'
+gem 'activesupport'
+gem 'railties'
+gem 'tilt'
+gem 'sprockets'
 
 group :test do
-  gem 'rspec',        '~> 2.5.0'
-  gem 'therubyracer', '~> 0.8.1'
+  gem 'rspec'
+  gem 'therubyracer'
 end
 
 platforms :mri_18 do
