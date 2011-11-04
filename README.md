@@ -28,16 +28,18 @@ To install, just add the following line to your Gemfile.
 
     gem 'strawberry_cough'
 
-Then include the `routes.js` JavaScript file before any script that uses it in your layout/views.
+Then `//= require routes` in the JavaScript manifest file.
+
+If you want a differently named JavaScript file add
+`somefile.js.strawberry_cough` to your javascript assets.
 
 Notes
 -----
 
-Right now, Strawberry Cough is **Rails 3 only**.
+Right now, Strawberry Cough is **Rails 3.1 only**.
 
-A file `public/javascripts/routes.js` will be generated on each request to your app in the development environment, and on the first request only in production.
-
-It uses the `to_prepare` hook in Railties (refer to [Rails docs][1]).
+It uses Rails' asset pipeline to generate the route file.
+In development/test environments add config.assets.compile=true.
 
 Authors
 -------
@@ -48,7 +50,7 @@ Authors
 License
 -------
 
-Copyright 2010, Three Wise Men Inc. All rights reserved.
+Copyright 2011, Three Wise Men Inc. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
