@@ -5,5 +5,3 @@ require 'rspec'
 require 'v8'
 
 require 'strawberry_cough'
-
-alias :context :describe

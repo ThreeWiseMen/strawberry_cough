@@ -4,8 +4,8 @@ gemspec
 
 gem 'rake'
 
-gem 'activesupport', '~> 3.1'
-gem 'railties', '~> 3.1'
+gem 'activesupport', '~> 3.2'
+gem 'railties', '~> 3.2'
 gem 'tilt'
 gem 'sprockets-rails'
 
