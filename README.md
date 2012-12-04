@@ -26,6 +26,10 @@ Installation
 
 To install, just add the following line to your Gemfile.
 
+    For Rails 3.1:
+    gem 'strawberry_cough', "= 0.2.0"
+
+    For Rails 3.2+:
     gem 'strawberry_cough'
 
 Then `//= require routes` in the JavaScript manifest file.
