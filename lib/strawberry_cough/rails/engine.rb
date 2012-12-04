@@ -3,7 +3,7 @@ require 'rails/engine'
 
 module StrawberryCough
   module Rails
-    class Engine < ::Rails::Engine
+    class Railtie < ::Rails::Railtie
       config.before_initialize do
         if defined?(Sprockets::Engines)
           Sprockets::Engines
