@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name        = "strawberry_cough"
   s.version     = StrawberryCough::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Craig Savolainen", "Nate Smith"]
+  s.authors     = ["Craig Savolainen", "Nate Smith", "Shawn Lee-Kwong"]
   s.email       = ["support@threewisemen.ca"]
   s.homepage    = "http://github.com/ThreeWiseMen/strawberry_cough"
   s.summary     = "Strawberry Cough lets you access your Rails 3 routes in your JavaScripts."
