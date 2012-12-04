@@ -13,7 +13,11 @@ describe StrawberryCough::RoutesCompiler do
 
   it "makes a Routes JavaScript object when given an array of routes" do
     route = double('route')
-    route.stub(:path) { "/parent/:id/edit(.:format)" }
+    path = Object.new
+    spec = "/parent/:id/edit(.:format)"
+    path.stub(:spec) { spec }
+    route.stub(:path) { path }
+
     route.stub(:name) { "edit_parent" }
     routes_object = compiler.compile([route])
     interpreter.eval(routes_object)

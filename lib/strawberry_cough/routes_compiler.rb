@@ -14,7 +14,7 @@ module StrawberryCough
     def self.compile(route_set)
       functions = named_routes(route_set).inject(Set.new) do |memo, route|
         name = route.name.camelize(:lower) + "Path"
-        memo << "#{name} : " + PathCompiler.compile(route.path)
+        memo << "#{name} : " + PathCompiler.compile(route.path.spec.to_s)
       end.to_a.join(',')
 
       <<-COMPILED
