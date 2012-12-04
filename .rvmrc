@@ -1,1 +1,1 @@
-rvm 1.9.2@strawberry_cough
+rvm use --create 1.9.3@strawberry_cough
