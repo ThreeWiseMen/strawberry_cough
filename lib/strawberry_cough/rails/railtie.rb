@@ -1,8 +1,5 @@
 require 'strawberry_cough/routes_compiler'
-
-require 'tilt'
 require 'sprockets'
-
 begin
  require 'sprockets/railtie'
 rescue LoadError
