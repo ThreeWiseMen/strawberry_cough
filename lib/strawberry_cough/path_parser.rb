@@ -11,6 +11,7 @@ module StrawberryCough
     #
     # @api private
     def self.parse_params(path)
+      puts path
       path.scan(PARAM_EXTRACTOR_PATTERN).flatten
     end
 
